@@ -4,17 +4,17 @@
 
 Les tests end-to-end nécessitent un mock d'API local via **WireMock** exécuté dans Docker.
 
-## 📦 Prérequis
+## Prérequis
 
 - **Docker Desktop** installé et en cours d’exécution
 - Un dossier WireMock contenant :
   - `mappings/pokemon.json`
   - `__files/pokemon-pikachu.json`
 
-## 📁 Structure des fichiers
+## Structure des fichiers
 
 
-## 📄 `mappings/pokemon.json`
+## `mappings/pokemon.json`
 
 ```json
 {
