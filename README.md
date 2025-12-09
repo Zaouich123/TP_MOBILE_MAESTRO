@@ -38,7 +38,7 @@ Les tests end-to-end nécessitent un mock d'API local via **WireMock** exécuté
     "regular": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
   }
 }
-
+```
 
 
 ## Run le container docker
