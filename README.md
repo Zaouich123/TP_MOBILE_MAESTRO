@@ -43,4 +43,5 @@ Les tests end-to-end nécessitent un mock d'API local via **WireMock** exécuté
 
 ## Run le container docker
 
-```docker run --rm -it -p 8080:8080 -v "E:/wiremock/mappings:/home/wiremock/mappings" -v "E:/wiremock/__files:/home/wiremock/__files" wiremock/wiremock:latest
+```bash
+docker run --rm -it -p 8080:8080 -v "E:/wiremock/mappings:/home/wiremock/mappings" -v "E:/wiremock/__files:/home/wiremock/__files" wiremock/wiremock:latest
