@@ -21,27 +21,48 @@ android {
     }
 
     buildTypes {
+        debug {
+            // URL utilisée quand tu lances l'app en debug (pour les tests Maestro)
+            buildConfigField(
+                "String",
+                "BASE_URL",
+                "\"http://10.0.2.2:8080/api/v1/\""
+            )
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
+            // URL utilisée en release (comportement normal)
+            buildConfigField(
+                "String",
+                "BASE_URL",
+                "\"https://tyradex.vercel.app/api/v1/\""
+            )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
     buildFeatures {
         compose = true
+        buildConfig = true   // ✅ OBLIGATOIRE POUR GÉNÉRER BuildConfig.java
     }
+
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
     }
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -63,11 +84,14 @@ dependencies {
     implementation(libs.androidx.runtime.livedata)
     implementation(libs.gson)
     implementation(libs.retrofit)
+
     testImplementation(libs.junit)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 }

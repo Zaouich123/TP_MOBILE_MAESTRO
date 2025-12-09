@@ -1,0 +1,27 @@
+appId: com.example.myapplication
+---
+- launchApp:
+    clearState: true
+
+- tapOn:
+    text: "Commencer le quizz"
+
+- assertVisible:
+    text: "Pikachu"
+
+- assertVisible:
+    text: "Score : 0 / 0"
+
+- tapOn:
+    text: "Entrez le nom du Pokémon"
+
+- inputText: "Pikachu"
+
+- tapOn:
+    text: "Valider"
+
+- assertVisible:
+    text: "Bravo !"
+
+- assertVisible:
+    text: "Score : 1 / 1"
